@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GCP Cloud Architect (PCA) Mastery & Exam Simulator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+      <div class="brand-header">
+        <div class="gcp-logo-badge">
+          <span class="dot blue"></span>
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <div>
+          <h1 class="brand-title">PCA Architect Hub</h1>
+          <span class="brand-subtitle">Google Cloud Professional Exam</span>
+        </div>
+      </div>
+
+      <nav class="nav-menu">
+        <div class="nav-group-label">OVERVIEW & STRATEGY</div>
+        <button class="nav-item active" data-view="dashboard">
+          <span class="nav-icon">📊</span>
+          <span class="nav-text">Readiness Dashboard</span>
+        </button>
+
+        <div class="nav-group-label">DEEP CLOUD KNOWLEDGE</div>
+        <button class="nav-item" data-view="knowledge">
+          <span class="nav-icon">🏛️</span>
+          <span class="nav-text">GCP Deep-Dive Encyclopedia</span>
+          <span class="nav-badge" id="nav-badge-modules">0/5</span>
+        </button>
+        <button class="nav-item" data-view="casestudies">
+          <span class="nav-icon">📋</span>
+          <span class="nav-text">4 Official Case Studies</span>
+          <span class="nav-badge highlight">Critical</span>
+        </button>
+        <button class="nav-item" data-view="decisiontrees">
+          <span class="nav-icon">🧭</span>
+          <span class="nav-text">Service Decision Trees</span>
+        </button>
+        <button class="nav-item" data-view="decoder">
+          <span class="nav-icon">🔑</span>
+          <span class="nav-text">Keyword Decoder & Cards</span>
+        </button>
+
+        <div class="nav-group-label">ASSESSMENT & SIMULATION</div>
+        <button class="nav-item" data-view="simulator">
+          <span class="nav-icon">🎯</span>
+          <span class="nav-text">Exam Simulator</span>
+          <span class="nav-badge" id="nav-badge-questions">35 Qs</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="readiness-mini-card">
+          <div class="readiness-mini-header">
+            <span>Exam Readiness</span>
+            <strong id="sidebar-readiness-pct">0%</strong>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" id="sidebar-readiness-bar" style="width: 0%"></div>
+          </div>
+          <p class="readiness-mini-hint" id="sidebar-readiness-status">Complete modules & practice exams to reach 80%+ target.</p>
+        </div>
+        <button class="btn-reset-progress" id="btn-reset-progress" title="Reset saved study progress">
+          Reset Study Progress
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="main-wrapper">
+      <!-- Top Bar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Menu">☰</button>
+          <div class="view-breadcrumb" id="topbar-title">Readiness Command Center</div>
+        </div>
+        <div class="topbar-right">
+          <div class="stat-pill" title="Mastered Knowledge Pillars">
+            <span class="stat-label">Pillars Mastered:</span>
+            <strong id="top-pillars-count">0 / 5</strong>
+          </div>
+          <div class="stat-pill" title="Questions Answered Correctly">
+            <span class="stat-label">Questions Mastered:</span>
+            <strong id="top-questions-count">0 / 35</strong>
+          </div>
+          <div class="stat-pill" title="Bookmarked for Review">
+            <span class="stat-label">★ Bookmarked:</span>
+            <strong id="top-bookmarks-count">0</strong>
+          </div>
+          <button class="btn btn-primary btn-sm" id="quick-start-exam-btn">
+            ⚡ Launch Timed Exam
+          </button>
+        </div>
+      </header>
+
+      <!-- Dynamic Views Container -->
+      <main class="content-area" id="content-area">
+        <!-- Populated dynamically by app.js -->
+      </main>
+    </div>
+  </div>
+
+  <!-- Case Study Reference Drawer Modal (Used inside Exam Simulator just like the real PCA exam) -->
+  <div class="modal-backdrop hidden" id="case-study-modal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-header">
+        <div>
+          <span class="badge badge-blue">Official PCA Exam Exhibit</span>
+          <h2 id="modal-cs-title">Case Study Reference</h2>
+        </div>
+        <button class="modal-close-btn" id="close-cs-modal-btn">&times;</button>
+      </div>
+      <div class="modal-body" id="modal-cs-body">
+        <!-- Populated dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
